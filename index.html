@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Photo Portfolio</title>
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+	<div class="container">
+		<header>
+			<h1>Photo Gallery</h1>
+			<nav>
+				<ul>
+					<li><a data-filter="all" id="all-button" data-selected="yes" href="javascript:;">All</a></li>
+					<li><a data-filter="animals" data-selected="no" href="javascript:;">Animals</a></li>
+					<li><a data-filter="buildings" data-selected="no" href="javascript:;">Buildings</a></li>
+					<li><a data-filter="trees" data-selected="no" href="javascript:;">Trees</a></li>
+					<li><a data-filter="bw" data-selected="no" href="javascript:;">Black &amp; White</a></li>
+				</ul>
+			</nav>
+			<div class="checkbox-toggle">
+			    <input id="exclusive" name="exclusive" type="checkbox">
+			    <label for="exclusive">image must include all selected categories</label>
+			</div>
+		</header>
+		<div class="gallery">
+			<div class="buildings trees">
+				<img src="img/barn.jpg" alt="Barn">
+			</div>
+			<div class="animals buildings trees">
+				<img src="img/birdhouse.jpg" alt="Birdhouse">
+			</div>
+			<div class="animals buildings">
+				<img src="img/black-cat.jpg" alt="Black cat">
+			</div>
+			<div class="animals buildings trees">
+				<img src="img/cat-in-tree.jpg" alt="Cat in a tree">
+			</div>
+			<div class="buildings trees">
+				<img src="img/central-park.jpg" alt="Central Park">
+			</div>
+			<div class="animals trees">
+				<img src="img/cow-grazing.jpg" alt="Cow grazing">
+			</div>
+			<div class="animals">
+				<img src="img/dog-with-basketball.jpg" alt="Dog with a basketball">
+			</div>
+			<div class="animals buildings trees">
+				<img src="img/donkey.jpg" alt="Donkey">
+			</div>
+			<div class="buildings trees">
+				<img src="img/english-canal.jpg" alt="English canal">
+			</div>
+			<div class="animals buildings bw">
+				<img src="img/flock-of-birds.jpg" alt="Flock of birds">
+			</div>
+			<div class="animals bw">
+				<img src="img/frog.jpg" alt="Frog">
+			</div>
+			<div class="animals buildings trees">
+				<img src="img/garden.jpg" alt="Garden">
+			</div>
+			<div class="buildings">
+				<img src="img/glass-building.jpg" alt="Glass building">
+			</div>
+			<div class="buildings bw">
+				<img src="img/gothic.jpg" alt="Gothic buildings">
+			</div>
+			<div class="animals buildings">
+				<img src="img/horse-and-stable.jpg" alt="Horse and a stable">
+			</div>
+			<div class="animals buildings trees bw">
+				<img src="img/horse-in-snow.jpg" alt="Horse in snow">
+			</div>
+			<div class="animals">
+				<img src="img/kangaroo.jpg" alt="Kangaroo">
+			</div>
+			<div class="animals">
+				<img src="img/llamas.jpg" alt="Llamas">
+			</div>
+			<div class="trees">
+				<img src="img/looking-up-at-tree.jpg" alt="Looking upward at a tree">
+			</div>
+			<div class="animals buildings">
+				<img src="img/macaws.jpg" alt="Macaws on windowsill">
+			</div>
+			<div class="trees bw">
+				<img src="img/meadow.jpg" alt="Trees in a meadow">
+			</div>
+			<div class="animals trees">
+				<img src="img/monkey-in-tree.jpg" alt="Monkey in a tree">
+			</div>
+			<div class="trees">
+				<img src="img/palm-tree-blue-sky.jpg" alt="Palm tree against a blue sky">
+			</div>
+			<div class="trees">
+				<img src="img/palm-tree-in-wind.jpg" alt="Palm tree in the wind">
+			</div>
+			<div class="trees">
+				<img src="img/park.jpg" alt="Park">
+			</div>
+			<div class="animals buildings">
+				<img src="img/pigeons.jpg" alt="Pigeons">
+			</div>
+			<div class="animals trees">
+				<img src="img/sheep.jpg" alt="Sheep grazing">
+			</div>
+			<div class="animals buildings">
+				<img src="img/sleeping-cat.jpg" alt="Sleeping cat">
+			</div>
+			<div class="trees">
+				<img src="img/snow-trees.jpg" alt="Tree covered in snow">
+			</div>
+			<div class="animals trees">
+				<img src="img/sparrow.jpg" alt="Sparrow in a tree">
+			</div>
+			<div class="animals buildings">
+				<img src="img/statue.jpg" alt="Roman statue">
+			</div>
+			<div class="animals">
+				<img src="img/tiger.jpg" alt="Tiger">
+			</div>
+			<div class="buildings trees">
+				<img src="img/tree-and-building.jpg" alt="Tree and building">
+			</div>
+			<div class="trees">
+				<img src="img/tree-sunset.jpg" alt="Tree against setting sun">
+			</div>
+			<div class="trees">
+				<img src="img/trees-on-hill.jpg" alt="Trees on a hillside">
+			</div>
+			<div class="buildings">
+				<img src="img/two-buildings.jpg" alt="Two buildings">
+			</div>
+			<div class="buildings bw">
+				<img src="img/urban.jpg" alt="Urban buildings">
+			</div>
+			<div class="buildings">
+				<img src="img/white-building.jpg" alt="White building">
+			</div>
+			<div class="buildings trees">
+				<img src="img/windmill.jpg" alt="Windmill">
+			</div>
+			<div class="animals">
+				<img src="img/zebras.jpg" alt="Zebras">
+			</div>
+		</div>
+	</div>
+	<footer>
+		<p>Created by <a href="https://pathobart.com">PatHobart.com</a></p>
+	</footer>
+
+	<script>
+
+		window.onload = function() {
+
+			// grabbing elements
+			var filterNav = document.querySelectorAll('nav a');
+			var allButton = document.getElementById('all-button');
+			var selectedArray = [];
+			var imageContainers = document.querySelectorAll('.gallery div');
+			var exclusive = document.getElementById('exclusive');
+
+			// functions
+			function toggleCategory(filterChoice) {
+				if(filterChoice.getAttribute('data-selected') == 'no') {
+					deselectOthers(filterChoice);
+					filterChoice.setAttribute('data-selected', 'yes');
+				} else {
+					filterChoice.setAttribute('data-selected', 'no');
+				}
+			}
+
+			function deselectOthers(filterChoice) {
+				if(filterChoice == allButton) {
+					for(var i = 1; i < filterNav.length; i++) {
+						filterNav[i].setAttribute('data-selected', 'no');
+					}
+				} else {
+					allButton.setAttribute('data-selected', 'no');
+				}
+			}
+
+			function populateArray() {
+				selectedArray = [];
+				if(allButton.getAttribute('data-selected') == 'yes') {
+					// cycle through every data filter except all
+					for(var i = 1; i < filterNav.length; i++) {
+						selectedArray.push(filterNav[i].getAttribute('data-filter'));
+					}
+				} else {
+					// get only the active filter choices
+					for(var i = 1; i < filterNav.length; i++) {
+						if(filterNav[i].getAttribute('data-selected') == 'yes') {
+							selectedArray.push(filterNav[i].getAttribute('data-filter'));
+						}
+					}
+				}
+			}
+
+			function hideAllPics() {
+				for(var i = 0; i < imageContainers.length; i++) {
+					imageContainers[i].style.display = 'none';
+				}
+			}
+
+			function noFilterSelection() {
+				if(selectedArray == 0) {
+					for(var i = 0; i < imageContainers.length; i++) {
+						imageContainers[i].style.display = 'inline-block';
+					}
+					allButton.setAttribute('data-selected', 'yes');
+				}
+			}
+
+			function filterInclusive() {
+				var group;
+				for(var i = 0; i < selectedArray.length; i++) {
+					group = document.querySelectorAll('.' + selectedArray[i]);
+					for(var j = 0; j < group.length; j++) {
+						group[j].style.display = 'inline-block';
+					}
+				}
+			}
+
+			function filterExclusive() {
+				var group;
+				var queryString = '';
+				for(var i = 0; i < selectedArray.length; i++) {
+					queryString += '.' + selectedArray[i];
+				}
+				if(queryString) {
+					group = document.querySelectorAll(queryString);
+					for(var j = 0; j < group.length; j++) {
+						group[j].style.display = 'inline-block';
+					}
+				}
+			}
+
+			function filterPhotos() {
+				hideAllPics();
+				noFilterSelection();
+				if(exclusive.checked) {
+					filterExclusive();
+				} else {
+					filterInclusive();
+				}
+			}
+
+			// active code
+			exclusive.onchange = function() {
+				populateArray();
+				filterPhotos();
+			};
+
+			for(var i = 0; i < filterNav.length; i++) {
+				filterNav[i].onclick = function() {
+					toggleCategory(this);
+					populateArray();
+					filterPhotos();
+				};
+			}
+
+		};
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+html {
+	overflow-y: scroll;
+}
+body {
+	color: #404040;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 300;
+	line-height: 1.6;
+	margin: 0;
+}
+h1 {
+	font-weight: 300;
+	margin-bottom: 10px;
+	text-align: center;
+}
+nav ul {
+	list-style: none;
+	margin: 0;
+	text-align: center;
+	padding: 0;
+}
+nav li {
+	display: inline-block;
+}
+nav a {
+	border-radius: 4px;
+	color: #404040;
+	display: inline-block;
+	margin: 0 5px;
+	padding: 0 10px;
+	text-decoration: none;
+}
+nav a:hover,
+nav a[data-selected="yes"] {
+	color: #fff;
+	background: #e07360;
+}
+.container {
+	margin: 0 auto 20px;
+	max-width: 1600px;
+	padding: 0 20px;
+}
+.gallery {
+	margin-top: 20px;
+}
+.gallery > div {
+	display: inline-block;
+	margin-left: -4px;
+	padding: 0.5%;
+	width: 49%;
+}
+.gallery img {
+	max-width: 100%;
+	vertical-align: bottom;
+}
+.checkbox-toggle {
+	margin-top: 15px;
+	text-align: center;
+}
+.checkbox-toggle label {
+	color: #999;
+	font-size: 0.9em;
+	margin-left: 2px;
+	vertical-align: bottom;
+}
+footer {
+	height: 50px;
+}
+footer p {
+	text-align: center;
+}
+@media only screen and (min-width: 800px) {
+	h1 {
+		font-size: 2.4em;
+	}
+	.gallery > div {
+		width: 32.3333%;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	h1 {
+		font-size: 3em;
+	}
+	.gallery > div {
+		width: 24%;
+	}
+}

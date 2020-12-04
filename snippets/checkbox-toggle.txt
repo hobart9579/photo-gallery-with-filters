@@ -1,0 +1,4 @@
+<div class="checkbox-toggle">
+    <input id="exclusive" name="exclusive" type="checkbox">
+    <label for="exclusive">image must include all selected categories</label>
+</div>
